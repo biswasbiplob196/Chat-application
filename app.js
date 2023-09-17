@@ -35,9 +35,9 @@ app.use(express.static(path.join(__dirname,"public")));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 
 // routing setup
-app.use('/',loginRouter);
-app.use('/users',usersRouter);
-app.use('/inbox',inboxRouter);
+app.use('/', loginRouter);
+app.use('/users', usersRouter);
+app.use('/inbox', inboxRouter);
 
 // error handling
 // 404 not found
@@ -46,5 +46,5 @@ app.use(notFoundHandler);
 // default error handling
 app.use(errorHandler);
 app.listen(process.env.PORT, ()=>{
-    console.log('server is running at port: ',process.env.PORT)
+    console.log(`server is running at port:`,process.env.PORT)
 })
